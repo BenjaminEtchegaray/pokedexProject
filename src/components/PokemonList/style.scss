@@ -1,0 +1,31 @@
+.pokemons{
+  
+  &_list{
+    display: flex;
+    flex-wrap: wrap;
+
+    &_pokemon{
+      margin: 0.5rem;
+      padding: 0.3rem;
+      border: solid black 2px;
+
+      &_name{
+        text-transform: capitalize;
+        margin: 0.2rem;
+      }
+
+      &_picture{
+        margin: 0.2rem;
+      }
+
+      &_type{
+        margin: 0.2rem;
+        text-transform: capitalize;
+      }
+
+      &_id{
+        margin: 0.2rem;
+      }
+    }
+  }
+}

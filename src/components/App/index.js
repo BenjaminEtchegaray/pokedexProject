@@ -1,7 +1,8 @@
 // == Import
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import './styles.css';
+import PokemonList from '../PokemonList';
+import './style.scss';
 
 // == Composant
 function App() {
@@ -9,19 +10,25 @@ function App() {
 
   useEffect(() => {
     const getPokemon = async () => {
-      const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=20');
-      console.log(res.data.results);
+      const reponse = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=20');
+      console.log(reponse.data.results);
 
-      res.data.results.forEach(async (pokemon) => {
+      reponse.data.results.forEach(async (pokemon) => {
         const poke = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
-        console.log(poke.data);
+        setPokemons((p) => [...p, poke.data]);
       });
     };
     getPokemon();
   }, []);
+
+  console.log(pokemons);
+
   return (
     <div className="app">
-      <header>Pokemon</header>
+      <header className="app_header">Pokedex</header>
+      <PokemonList
+        pokemons={pokemons}
+      />
     </div>
   );
 }
