@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     const getPokemon = async () => {
-      const reponse = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=20');
+      const reponse = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
       console.log(reponse.data.results);
 
       reponse.data.results.forEach(async (pokemon) => {

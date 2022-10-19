@@ -3,11 +3,14 @@
   &_list{
     display: flex;
     flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
 
     &_pokemon{
       margin: 0.5rem;
       padding: 0.3rem;
-      border: solid black 2px;
+      border-radius: 30px;
+      background-color: beige;
 
       &_name{
         text-transform: capitalize;

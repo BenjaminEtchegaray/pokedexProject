@@ -1,8 +1,11 @@
 .app {
   text-align: center;
+  
 
   &_header{
     font-size: 3rem;
     margin: 1rem;
+    color: white;
+    font-weight: bold;
   }
 }
